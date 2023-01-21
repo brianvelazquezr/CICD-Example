@@ -41,7 +41,7 @@ class QuoteViewModel @Inject constructor(
            /* if(quote != null){
                 quoteModel.postValue(quote!!)
             }*/
-            quote.let {
+            quote?.let {
                 quoteModel.value = it
             }
 
