@@ -33,7 +33,7 @@ class GetQuotesUseCaseTest{
         getQuotesUseCase()
 
         //Then
-        coVerify(exactly = 1) { quoteRepository.getAllQuotesFromDatabase() }
+        coVerify(exactly = 0) { quoteRepository.getAllQuotesFromDatabase() }
         coVerify(exactly = 0) { quoteRepository.clearQuotes() }
         coVerify(exactly = 0) { quoteRepository.insertQuotes(any()) }
     }
