@@ -5,7 +5,6 @@ import com.example.advancedappmovies.domain.model.Quote
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery
 import io.mockk.coVerify
-import io.mockk.impl.annotations.MockK
 import io.mockk.impl.annotations.RelaxedMockK
 import kotlinx.coroutines.runBlocking
 import org.junit.Before
@@ -34,7 +33,7 @@ class GetQuotesUseCaseTest{
         getQuotesUseCase()
 
         //Then
-        coVerify(exactly = 0) { quoteRepository.getAllQuotesFromDatabase() }
+        coVerify(exactly = 1) { quoteRepository.getAllQuotesFromDatabase() }
         coVerify(exactly = 0) { quoteRepository.clearQuotes() }
         coVerify(exactly = 0) { quoteRepository.insertQuotes(any()) }
     }
